@@ -3,7 +3,12 @@ import numpy as np
 import pickle
 
 # Load the trained model
-loaded_model = pickle.load(open('Diabetesmodel.pkl', 'rb'))
+import os
+loaded_model = None
+
+MODEL_PATH = os.path.join(os.path.dirname(__file__), 'Diabetesmodel.pkl')
+with open(MODEL_PATH, 'rb') as f:
+    loaded_model = pickle.load(f)
 
 # Prediction function
 def predict_diabetes(input_data):
