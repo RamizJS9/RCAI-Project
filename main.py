@@ -6,8 +6,7 @@ import pickle
 import os
 loaded_model = None
 
-MODEL_PATH = os.path.join(os.path.dirname(__file__), '..', 'Diabetesmodel.pkl')
-with open(MODEL_PATH, 'rb') as f:
+with open('Diabetesmodel.pkl', 'rb') as f:
     loaded_model = pickle.load(f)
 
 # Prediction function
